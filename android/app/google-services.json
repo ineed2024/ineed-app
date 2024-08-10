@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1000685299379",
+    "project_id": "cerus-garantia",
+    "storage_bucket": "cerus-garantia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000685299379:android:d43f415f4e7fda9ebd72c6",
+        "android_client_info": {
+          "package_name": "br.com.fixit.ineed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1000685299379-1678u9ttk0asbmsjk325h2s6atrrhr06.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBl7Dmu52b_oaLGl1TRjeW0a9BOE69htQc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1000685299379-1678u9ttk0asbmsjk325h2s6atrrhr06.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

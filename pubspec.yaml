@@ -1,0 +1,72 @@
+name: Ineed
+description: A new Flutter project.
+
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+vars:
+  clean: flutter clean
+  get: flutter pub get
+  runner: flutter pub run build_runner
+scripts:
+  mobx_build: $runner build
+  mobx_watch: flutter pub run build_runner watch --delete-conflicting-outputs
+  mobx_build_clean: $clean & $get & $runner build --delete-conflicting-outputs
+environment:
+  sdk: ">=2.17.6 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  dio: ^5.1.2
+  shared_preferences: ^2.0.15
+  flutter_modular: ^5.0.3
+  flutter_screenutil: ^5.5.4
+  font_awesome_flutter: ^10.1.0
+  # Routes, Dependence Injection, Service Locator
+  injectable: ^2.1.2
+  mobx: ^2.0.7+5
+  flutter_mobx: ^2.0.6+1
+  path_provider: ^2.0.15
+  get_it: ^7.6.0
+  intl: ^0.18.0
+  whatsapp_unilink: 2.0.0
+  url_launcher: 6.0.9
+  easy_mask: 2.0.1
+  image_picker: 0.8.2
+  image_cropper: 1.4.1
+  time_picker_widget: 1.0.0+10
+  package_info_plus: ^5.0.1
+  google_fonts: ^6.1.0
+  flutter_rating_bar: 4.0.1
+  string_validator: 0.3.0
+  skeletons:
+  brasil_fields:
+  efipay: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: 0.13.1
+  flutter_lints: ^2.0.0
+  mobx_codegen: ^2.0.7
+  modular_test: ^2.0.0
+  build_runner: ^2.2.0
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/icon.jpeg"
+  adaptive_icon_background: "#FF4E15"
+
+flutter:
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/fonts/
+    - assets/images/
+    - assets/images/icons-category/imagem/
+    - assets/images/brand-card/
