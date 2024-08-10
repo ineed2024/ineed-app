@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 enum FieldEnum { email, phonenumber, cpfCnpj }
 
@@ -89,6 +90,17 @@ class _MenuPageState extends State<MenuPage> {
     });
   }
 
+  final Uri _url = Uri.parse('https://ineed2024.github.io/');
+
+  Future<void> _launchUrl(Uri url) async {
+    if (!await launchUrl(
+      url,
+      mode: LaunchMode.externalApplication,
+    )) {
+      throw 'Could not launch $url';
+    }
+  }
+
   _onActionCoupon() => Modular.to.pushNamed(RouteName.coupon);
 
   @override
@@ -151,6 +163,16 @@ class _MenuPageState extends State<MenuPage> {
                               'Cupom',
                               _onActionCoupon),
                         ]),
+                      ),
+                      ListTile(
+                        onTap: () => _launchUrl(_url),
+                        leading: Icon(Icons.view_list,
+                            color: AppColorScheme.feedbackWarningDark2),
+                        title: Text('Politica de Privacidade',
+                            style: TextStyle(
+                                fontSize: 30.w,
+                                fontWeight: FontWeight.w600,
+                                color: AppColorScheme.feedbackWarningDark2)),
                       ),
                       ListTile(
                         onTap: _onActionLogout,

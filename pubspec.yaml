@@ -33,7 +33,7 @@ dependencies:
   get_it: ^7.6.0
   intl: ^0.18.0
   whatsapp_unilink: 2.0.0
-  url_launcher: 6.0.9
+  url_launcher: ^6.1.6
   easy_mask: 2.0.1
   image_picker: 0.8.2
   image_cropper: 1.4.1
