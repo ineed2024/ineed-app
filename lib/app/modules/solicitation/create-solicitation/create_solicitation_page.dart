@@ -34,8 +34,6 @@ class CreateSolicitationPage extends StatefulWidget {
 }
 
 class _CreateSolicitationPageState extends State<CreateSolicitationPage> {
-  //use 'controller' variable to access controller
-
   final controller = CreateSolicitationController();
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -49,8 +47,38 @@ class _CreateSolicitationPageState extends State<CreateSolicitationPage> {
 
   @override
   void initState() {
-    controller.init();
+    a();
     super.initState();
+  }
+
+  a() async {
+    await controller.init();
+    if (controller.isUserPhonenumber() == false) {
+      CustomAlertDialog.info(
+          context,
+          'Atencão',
+          'O campo telefone deve ser preenchido',
+          () => Modular.to
+              .pushNamed(RouteName.userUpdateField, arguments: 'phone')
+              .then((value) => a()));
+    }
+    if (controller.isUserCPFOrCNPJ() == false) {
+      CustomAlertDialog.info(
+          context,
+          'Atencão',
+          'O campo CPF/CNPJ deve ser preenchido',
+          () => Modular.to
+              .pushNamed(RouteName.userUpdateField, arguments: 'cpfCnpj')
+              .then((value) => a()));
+    }
+    if (controller.resourceUser.data!.address == null) {
+      CustomAlertDialog.info(
+          context,
+          'Atencão',
+          'O campo ENDEREÇO deve ser preenchido',
+          () =>
+              Modular.to.pushNamed(RouteName.userAddress).then((value) => a()));
+    }
   }
 
   @override
@@ -181,8 +209,10 @@ class _CreateSolicitationPageState extends State<CreateSolicitationPage> {
         });
   }
 
-  getImage(ImageSource src) async {
-    final pickedFile = await picker.getImage(source: src, imageQuality: 60);
+  Future getImage(ImageSource src) async {
+    final picker = ImagePicker();
+    final pickedFile = await picker.pickImage(source: src, imageQuality: 80);
+
     if (pickedFile != null) {
       controller.addImage(File(pickedFile.path));
     }
@@ -279,10 +309,10 @@ class _CreateSolicitationPageState extends State<CreateSolicitationPage> {
     if (value) {
       WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
         CustomAlertDialog.info(
-          context,
-          'Atendimento urgente',
-          'Visitas agendadas para um período inferior a 24 horas recebem uma taxa extra de urgência no valor de ${UIHelper.moneyFormat(controller.resourceConfiguration.data!.urgentVisitsRate!)} pagas na confirmação do agendamento.',
-        );
+            context,
+            'Atendimento urgente',
+            'Visitas agendadas para um período inferior a 24 horas recebem uma taxa extra de urgência no valor de ${UIHelper.moneyFormat(controller.resourceConfiguration.data!.urgentVisitsRate!)} pagas na confirmação do agendamento.',
+            null);
       });
     }
   }
@@ -292,10 +322,10 @@ class _CreateSolicitationPageState extends State<CreateSolicitationPage> {
     if (value) {
       WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
         CustomAlertDialog.info(
-          context,
-          'Cliente fornecendo o material',
-          'O iNeed não se responsabiliza por materiais fornecidos por terceiros',
-        );
+            context,
+            'Cliente fornecendo o material',
+            'O iNeed não se responsabiliza por materiais fornecidos por terceiros',
+            null);
       });
     }
   }

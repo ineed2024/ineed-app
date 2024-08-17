@@ -113,7 +113,7 @@ class _EvaluationPageState
       Modular.to.pop(true);
     } else {
       CustomAlertDialog.info(context, 'Avaliação',
-          'Não foi possível avaliar, tente novamente mais tarde.');
+          'Não foi possível avaliar, tente novamente mais tarde.', null);
     }
   }
 }

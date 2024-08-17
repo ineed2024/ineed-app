@@ -76,12 +76,13 @@ abstract class _CreateSolicitationControllerBase with Store {
   bool formIsValid = false;
 
   @action
-  init() async {
+  Future init() async {
     resourceConfiguration = ResourceData(status: Status.loading);
     resourceUser = ResourceData(status: Status.loading);
     resourceConfiguration = await getCondigurationUseCase();
     resourceUser = await getProfileUserUseCase();
     formatAddress();
+    return;
   }
 
   @action

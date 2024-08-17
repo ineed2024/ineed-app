@@ -211,7 +211,7 @@ class _VisitPageViewState extends State<VisitPageView> {
       } else {
         // error
         CustomAlertDialog.info(
-            context, 'Confirmar visita', result.error!.message!);
+            context, 'Confirmar visita', result.error!.message!, null);
       }
     });
   }

@@ -149,7 +149,7 @@ class _CreditCardWidgetState extends State<CreditCardWidget>
     Orientation orientation,
   ) {
     final TextStyle defaultTextStyle =
-        Theme.of(context).textTheme.bodyText1!.merge(
+        Theme.of(context).textTheme.bodyMedium!.merge(
               TextStyle(
                 color: Colors.black,
                 fontSize: 12,
@@ -245,7 +245,7 @@ class _CreditCardWidgetState extends State<CreditCardWidget>
     Orientation orientation,
   ) {
     final TextStyle defaultTextStyle =
-        Theme.of(context).textTheme.bodyText1!.merge(
+        Theme.of(context).textTheme.bodyMedium!.merge(
               TextStyle(
                 color: Colors.white,
                 fontSize: 12,

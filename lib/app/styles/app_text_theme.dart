@@ -9,35 +9,32 @@ class AppTextTheme {
   static TextTheme get textTheme => textThemeRoboto;
 
   static TextTheme textThemeRoboto = TextTheme(
-    headline1: headingH1Regular2,
-    headline2: headingH2Medium2,
-    headline3: headingH3Regular2,
-    headline4: headingH4Regular2,
-    headline5: headingH5Medium2,
-    headline6: GoogleFonts.roboto(
-      fontSize: 19.sp,
-      fontWeight: FontWeight.w500,
-      letterSpacing: 0.15.sp,
-    ),
-    subtitle1: GoogleFonts.roboto(
-      fontSize: 15.sp,
-      fontWeight: FontWeight.w400,
-      letterSpacing: 0.15.sp,
-    ),
-    subtitle2: GoogleFonts.roboto(
-      fontSize: 13.sp,
-      fontWeight: FontWeight.w500,
-      letterSpacing: 0.1.sp,
-    ),
-    bodyText1: bodyRegular2,
-    bodyText2: body2Medium2,
-    button: GoogleFonts.roboto(
-      fontSize: 13.sp,
-      fontWeight: FontWeight.w500,
-      letterSpacing: 1.25.sp,
-    ),
-    caption: geralCaptionRegular2,
-    overline: geralOverlineRegular2,
+    headlineMedium: headingH1Regular2,
+    headlineLarge: headingH2Medium2,
+    // headline6: GoogleFonts.roboto(
+    //   fontSize: 19.sp,
+    //   fontWeight: FontWeight.w500,
+    //   letterSpacing: 0.15.sp,
+    // ),
+    // subtitle1: GoogleFonts.roboto(
+    //   fontSize: 15.sp,
+    //   fontWeight: FontWeight.w400,
+    //   letterSpacing: 0.15.sp,
+    // ),
+    // subtitle2: GoogleFonts.roboto(
+    //   fontSize: 13.sp,
+    //   fontWeight: FontWeight.w500,
+    //   letterSpacing: 0.1.sp,
+    // ),
+    // bodyText1: bodyRegular2,
+    // bodyText2: body2Medium2,
+    // button: GoogleFonts.roboto(
+    //   fontSize: 13.sp,
+    //   fontWeight: FontWeight.w500,
+    //   letterSpacing: 1.25.sp,
+    // ),
+    // caption: geralCaptionRegular2,
+    // overline: geralOverlineRegular2,
   );
 
   static TextStyle headingH1Regular2 = TextStyle(

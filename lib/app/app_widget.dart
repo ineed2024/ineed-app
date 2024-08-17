@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'app_controller.dart';
 
@@ -23,6 +24,11 @@ class _AppWidgetState extends State<AppWidget> {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Ineed',
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate
+      ],
+      supportedLocales: [Locale('pt', 'BR')],
       // darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.light,
       routeInformationParser: Modular.routeInformationParser,

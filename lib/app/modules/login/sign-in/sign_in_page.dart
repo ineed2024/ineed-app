@@ -130,12 +130,12 @@ class SignInPageState extends State<SignInPage> {
                                 Text(
                                   "Bem vindo",
                                   textAlign: TextAlign.center,
-                                  style: Theme.of(context).textTheme.bodyText1,
+                                  style: Theme.of(context).textTheme.bodyMedium,
                                 ),
                                 Text("Faça o login para começar",
                                     textAlign: TextAlign.center,
                                     style:
-                                        Theme.of(context).textTheme.bodyText2),
+                                        Theme.of(context).textTheme.bodySmall),
                                 const Spacer(flex: 1),
                                 EmailOutlinedTextFieldWidget(
                                   placeholder: "Digite seu email",

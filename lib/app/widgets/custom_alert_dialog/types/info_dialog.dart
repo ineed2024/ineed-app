@@ -6,8 +6,13 @@ import '../../../styles/app_color_scheme.dart';
 class InfoDialog extends StatelessWidget {
   final String title;
   final String message;
+  final Function()? onClickButton;
 
-  const InfoDialog({Key? key, required this.title, required this.message})
+  const InfoDialog(
+      {Key? key,
+      required this.title,
+      required this.message,
+      this.onClickButton})
       : super(key: key);
 
   @override
@@ -35,6 +40,7 @@ class InfoDialog extends StatelessWidget {
         TextButton(
             child: const Text('Ok'),
             onPressed: () {
+              onClickButton?.call();
               Navigator.of(context).pop();
             }),
       ],

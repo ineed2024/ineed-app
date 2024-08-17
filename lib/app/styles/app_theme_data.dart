@@ -28,15 +28,15 @@ final ThemeData themeData = ThemeData(
     disabledColor: AppColorScheme.primaryswatch[200],
 
     // buttonColor: Color(0xffe0e0e0),
-    toggleableActiveColor: AppColorScheme.primaryswatch[700],
+    // toggleableActiveColor: AppColorScheme.primaryswatch[700],
     secondaryHeaderColor: Color(0xfffbe9e7),
     // textSelectionColor: AppColorScheme.primaryswatch[200],
     // cursorColor: AppColorScheme.primaryswatch[200],
     // textSelectionHandleColor: AppColorScheme.primaryswatch[300],
-    backgroundColor: AppColorScheme.primaryswatch[200],
+    // backgroundColor: AppColorScheme.primaryswatch[200],
     dialogBackgroundColor: AppColorScheme.white,
     indicatorColor: AppColorScheme.primaryColor,
-    errorColor: AppColorScheme.feedbackDangerDark,
+    // errorColor: AppColorScheme.feedbackDangerDark,
     buttonTheme: ButtonThemeData(
         textTheme: ButtonTextTheme.normal,
         disabledColor: AppColorScheme.primaryswatch[200],

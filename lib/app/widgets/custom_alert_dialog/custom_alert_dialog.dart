@@ -47,10 +47,14 @@ class CustomAlertDialog {
     );
   }
 
-  static Future<void> info(BuildContext context, String title, String message) {
+  static Future<void> info(BuildContext context, String title, String message,
+      Function()? onActionButton) {
     return showDialog(
-      context: context,
-      builder: (context) => InfoDialog(title: title, message: message),
-    );
+        context: context,
+        builder: (context) => InfoDialog(
+              title: title,
+              message: message,
+              onClickButton: onActionButton,
+            ));
   }
 }

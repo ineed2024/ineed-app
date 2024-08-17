@@ -420,7 +420,8 @@ class _BudgetPageViewState extends State<BudgetPageView> {
         _showSnackBar('Taxa extra confirmado com sucesso');
       } else {
         // error
-        CustomAlertDialog.info(context, 'Taxa extra', result.error!.message!);
+        CustomAlertDialog.info(
+            context, 'Taxa extra', result.error!.message!, null);
       }
     });
   }
@@ -439,7 +440,7 @@ class _BudgetPageViewState extends State<BudgetPageView> {
       } else {
         // error
         CustomAlertDialog.info(
-            context, 'Confirmar orçamento', result.error!.message!);
+            context, 'Confirmar orçamento', result.error!.message!, null);
       }
     });
   }
