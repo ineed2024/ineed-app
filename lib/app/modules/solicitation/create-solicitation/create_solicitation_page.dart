@@ -47,38 +47,8 @@ class _CreateSolicitationPageState extends State<CreateSolicitationPage> {
 
   @override
   void initState() {
-    a();
     super.initState();
-  }
-
-  a() async {
-    await controller.init();
-    if (controller.isUserPhonenumber() == false) {
-      CustomAlertDialog.info(
-          context,
-          'Atencão',
-          'O campo telefone deve ser preenchido',
-          () => Modular.to
-              .pushNamed(RouteName.userUpdateField, arguments: 'phone')
-              .then((value) => a()));
-    }
-    if (controller.isUserCPFOrCNPJ() == false) {
-      CustomAlertDialog.info(
-          context,
-          'Atencão',
-          'O campo CPF/CNPJ deve ser preenchido',
-          () => Modular.to
-              .pushNamed(RouteName.userUpdateField, arguments: 'cpfCnpj')
-              .then((value) => a()));
-    }
-    if (controller.resourceUser.data!.address == null) {
-      CustomAlertDialog.info(
-          context,
-          'Atencão',
-          'O campo ENDEREÇO deve ser preenchido',
-          () =>
-              Modular.to.pushNamed(RouteName.userAddress).then((value) => a()));
-    }
+    controller.init();
   }
 
   @override
