@@ -82,9 +82,7 @@ class _MenuPageState extends State<MenuPage> {
           onActionNegativeButton: () {}, onActionPositiveButton: () async {
         final result = await controller.logout();
         if (result.status == Status.success) {
-          Modular.to.pushNamedAndRemoveUntil(RouteName.login, (route) => false);
-          // Modular.to.popUntil((route) => route.isFirst);
-          // Modular.to.pushNamed(RouteName.login);
+          Modular.to.popAndPushNamed(RouteName.login);
         }
       });
     });
@@ -122,46 +120,20 @@ class _MenuPageState extends State<MenuPage> {
                     children: [
                       Expanded(
                         child: ListView(children: [
-                          // buildListTileBlack(
-                          //     // FlutterIcons.email_ent,
-                          //     Icons.email,
-                          //     'Email',
-                          //     _onActionEmail),
-                          buildListTileBlack(
-                              // FlutterIcons.update_mco,
-                              Icons.password,
-                              'Alterar Senha',
+                          buildListTileBlack(Icons.password, 'Alterar Senha',
                               _onActionUpdatePassword),
                           buildListTileBlack(
-                              Icons.person,
-                              // FlutterIcons.numeric_0_box_mco,
-                              'CPF/CNPJ',
-                              _onActionCpfCnpj),
+                              Icons.person, 'CPF/CNPJ', _onActionCpfCnpj),
                           buildListTileBlack(
-                              Icons.phone,
-                              // FlutterIcons.ios_call_ion,
-                              'Telefone',
-                              _onActionPhonenumber),
-                          buildListTileBlack(
-                              Icons.location_city,
-                              // FlutterIcons.location_on_mdi,
-                              'Endereço',
+                              Icons.phone, 'Telefone', _onActionPhonenumber),
+                          buildListTileBlack(Icons.location_city, 'Endereço',
                               _onActionAddress),
                           buildListTileBlack(
-                              Icons.card_giftcard,
-                              // FlutterIcons.creditcard_ant,
-                              'Cartões',
-                              _onActionCards),
-                          buildListTileBlack(
-                              Icons.file_open,
-                              // FlutterIcons.file_outline_mco,
-                              'Solicitações',
+                              Icons.card_giftcard, 'Cartões', _onActionCards),
+                          buildListTileBlack(Icons.file_open, 'Solicitações',
                               _onActionSolicitations),
                           buildListTileBlack(
-                              Icons.money,
-                              // FlutterIcons.money_off_mdi,
-                              'Cupom',
-                              _onActionCoupon),
+                              Icons.money, 'Cupom', _onActionCoupon),
                         ]),
                       ),
                       ListTile(
@@ -199,9 +171,7 @@ class _MenuPageState extends State<MenuPage> {
       leading: Icon(icon, color: AppColorScheme.black),
       title: Text(label,
           style: TextStyle(fontSize: 30.w, fontWeight: FontWeight.w600)),
-      trailing: Icon(Icons.chevron_right,
-          // FlutterIcons.chevron_right_ent,
-          color: AppColorScheme.black),
+      trailing: Icon(Icons.chevron_right, color: AppColorScheme.black),
     );
   }
 }

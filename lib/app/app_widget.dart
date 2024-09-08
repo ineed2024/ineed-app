@@ -1,9 +1,12 @@
+import 'package:Ineed/app/styles/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'app_controller.dart';
+import 'widgets/progress/circuclar_progress_custom.dart';
 
 class AppWidget extends StatefulWidget {
   const AppWidget({super.key});
@@ -21,18 +24,19 @@ class _AppWidgetState extends State<AppWidget> {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      title: 'Ineed',
-      localizationsDelegates: [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate
-      ],
-      supportedLocales: [Locale('pt', 'BR')],
-      // darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.light,
-      routeInformationParser: Modular.routeInformationParser,
-      routerDelegate: Modular.routerDelegate,
-    ); //added by extension
+    return Observer(builder: (_) {
+      return MaterialApp.router(
+        debugShowCheckedModeBanner: false,
+        title: 'iNeed',
+        localizationsDelegates: const [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate
+        ],
+        supportedLocales: const [Locale('pt', 'BR')],
+        themeMode: ThemeMode.light,
+        routeInformationParser: Modular.routeInformationParser,
+        routerDelegate: Modular.routerDelegate,
+      );
+    }); //added by extension
   }
 }

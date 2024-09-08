@@ -1,4 +1,3 @@
 class AppImages {
-  static String get carro => "assets/images/carro.jpg";
-  static String get wcars => "assets/icons/wcars.png";
+  static String get logo => "assets/images/logo_slogan_black.png";
 }

@@ -1,5 +1,6 @@
 class RouteName {
-  static const String login = '/';
+  static const String splash = '/';
+  static const String login = '/login';
   static const String dashboard = '/dashboard';
   static const String solicitation = '/solicitation';
   static const String user = '/user';
